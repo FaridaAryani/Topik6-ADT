@@ -12,16 +12,6 @@ Abstract Data Types (ADT) adalah cara untuk mendefinisikan struktur data dengan 
 - Kinerja dalam implementasi.
 - Kesesuaian dengan paradigma pemrograman yang digunakan.
 
-## 🌍 Contoh ADT dalam Berbagai Paradigma
-1. **Pemrograman Berbasis Objek (OOP)**:  
-   - **Queue**: Menyusun elemen dengan prinsip FIFO (First In First Out).
-  
-2. **Pemrograman Fungsional**:  
-   - **List**: Koleksi elemen yang dapat diolah dengan fungsi.
-
-3. **Pemrograman Deklaratif**:  
-   - **Set**: Kumpulan unik dari elemen yang tidak terurut.
-
 ## 🔗 [Desain Canva untuk Topik Ini](https://www.canva.com/design/DAGQjESj3R4/R6o1RZn118W3Z8da2laIMg/edit?utm_content=DAGQjESj3R4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ---
