@@ -1,3 +1,32 @@
+-- Stored Procedure untuk menaikkan gaji karyawan dalam persentase
+CREATE OR REPLACE PROCEDURE naikkan_gaji_karyawan(
+    p_id_karyawan IN NUMBER,
+    p_persentase IN NUMBER
+) AS
+    v_karyawan Karyawan;
+BEGIN
+    SELECT VALUE(k) INTO v_karyawan
+    FROM tabel_karyawan k
+    WHERE k.id_karyawan = p_id_karyawan;
+    
+    v_karyawan.naikkan_gaji(p_persentase);
+    
+    UPDATE tabel_karyawan k
+    SET k = v_karyawan
+    WHERE k.id_karyawan = p_id_karyawan;
+    
+    COMMIT;
+    DBMS_OUTPUT.PUT_LINE('Gaji karyawan ' || v_karyawan.nama || ' telah dinaikkan sebesar ' || p_persentase || '%');
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Karyawan dengan ID ' || p_id_karyawan || ' tidak ditemukan.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Terjadi kesalahan: ' || SQLERRM);
+        ROLLBACK;
+END;
+/
+
+
 -- Stored Procedure untuk menambahkan karyawan ke proyek
 CREATE OR REPLACE PROCEDURE tambah_karyawan_ke_proyek(
     p_id_karyawan IN NUMBER,
