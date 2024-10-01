@@ -3,6 +3,7 @@ CREATE OR REPLACE VIEW view_karyawan_proyek AS
 SELECT 
     k.id_karyawan,
     k.nama AS nama_karyawan,
+    k.hitung_usia() AS usia,
     k.departemen,
     p.id_proyek,
     p.nama_proyek,
